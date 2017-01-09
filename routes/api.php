@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+Route::get('/categories', 'CategoryController@index');
+Route::post('/categories', 'CategoryController@store')->middleware('auth:api');
+Route::put('/categories/{category}', 'CategoryController@update');

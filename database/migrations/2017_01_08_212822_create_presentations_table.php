@@ -18,9 +18,9 @@ class CreatePresentationsTable extends Migration
             $table->string('title');
             $table->string('description',2000);
             $table->string('description_audio_file_path')->nullable()->default(null);
-            $table->unsignedInteger('media_content_item_id')->nullable()->default(null);
             $table->unsignedInteger('category_id');
-            $table->unsignedInteger('test_id')->nullable()->default(null);
+            /*dropped*/$table->unsignedInteger('media_content_item_id')->nullable()->default(null);
+            /*dropped*/$table->unsignedInteger('test_id')->nullable()->default(null);
             $table->boolean('isActive')->default(false);
             $table->timestamps();
         });
