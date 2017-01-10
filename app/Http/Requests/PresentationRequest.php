@@ -24,14 +24,30 @@ class PresentationRequest extends ApiRequest
         switch ($this->method()) {
             case 'POST':
                 return [
-
+                    'title' => 'required|max:255',
+                    'description' => 'required|max:2000',
+                    'description_audio_file_path' => 'max:255',
+                    'category_id' => 'required|integer|exists:categories,id',
+                    'isActive' => 'sometimes|nullable|boolean',
+                    'media_content_description' => 'sometimes|nullable|max:255',
+                    'media_content_description_audio_file_path' => 'sometimes|nullable|max:255',
+                    'media_content_image_file_path' => 'sometimes|nullable|max:255',
+                    'media_content_youtube_video' => 'sometimes|nullable|max:1024',
                 ];
 
                 break;
             case 'PUT':
             case 'PATCH':
                 return [
-
+                    'title' => 'required|max:255',
+                    'description' => 'required|max:2000',
+                    'description_audio_file_path' => 'max:255',
+                    'category_id' => 'required|integer|exists:categories,id',
+                    'isActive' => 'sometimes|nullable|boolean',
+                    'media_content_description' => 'sometimes|nullable|max:255',
+                    'media_content_description_audio_file_path' => 'sometimes|nullable|max:255',
+                    'media_content_image_file_path' => 'sometimes|nullable|max:255',
+                    'media_content_youtube_video' => 'sometimes|nullable|max:1024',
                 ];
 
                 break;

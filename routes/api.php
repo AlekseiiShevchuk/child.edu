@@ -19,4 +19,10 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/categories', 'CategoryController@index');
 Route::post('/categories', 'CategoryController@store')->middleware('auth:api');
-Route::put('/categories/{category}', 'CategoryController@update');
+Route::put('/categories/{category}', 'CategoryController@update')->middleware('auth:api');
+
+Route::get('/presentations', 'PresentationController@index');
+Route::get('/presentations/{presentation}', 'PresentationController@show');
+Route::post('/presentations', 'PresentationController@store')->middleware('auth:api');
+Route::put('/presentations/{presentation}', 'PresentationController@update')->middleware('auth:api');
+Route::delete('/presentations/{presentation}', 'PresentationController@destroy')->middleware('auth:api');
