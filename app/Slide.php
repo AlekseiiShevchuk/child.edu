@@ -4,22 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Presentation extends Model
+class Slide extends Model
 {
     protected $fillable = [
         'title',
         'description',
         'description_audio_file_path',
-        'isActive',
+        'is_active',
         'media_content_description',
         'media_content_description_audio_file_path',
         'media_content_image_file_path',
         'media_content_youtube_video',
-        'category_id'
+        'lesson_id'
     ];
 
-    public function category()
+    public function lesson()
     {
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo('App\Lesson');
     }
 }

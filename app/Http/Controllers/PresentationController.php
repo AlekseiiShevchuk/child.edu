@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PresentationRequest;
-use App\Presentation;
+use App\Slide;
 use Illuminate\Http\Request;
 
 class PresentationController extends Controller
@@ -15,7 +15,7 @@ class PresentationController extends Controller
      */
     public function index()
     {
-        $presentations = Presentation::all();
+        $presentations = Slide::all();
         return response()->json($presentations);
     }
 
@@ -27,17 +27,17 @@ class PresentationController extends Controller
      */
     public function store(PresentationRequest $request)
     {
-        $presentation = Presentation::create($request->all());
+        $presentation = Slide::create($request->all());
         return response()->json($presentation, 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  Presentation $presentation
+     * @param  Slide $presentation
      * @return \Illuminate\Http\Response
      */
-    public function show(Presentation $presentation)
+    public function show(Slide $presentation)
     {
         return response()->json($presentation);
     }
@@ -46,10 +46,10 @@ class PresentationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  PresentationRequest $request
-     * @param  Presentation $presentation
+     * @param  Slide $presentation
      * @return \Illuminate\Http\Response
      */
-    public function update(PresentationRequest $request, Presentation $presentation)
+    public function update(PresentationRequest $request, Slide $presentation)
     {
         $presentation->update($request->all());
         return response()->json($presentation);
@@ -58,10 +58,10 @@ class PresentationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Presentation $presentation
+     * @param  Slide $presentation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Presentation $presentation)
+    public function destroy(Slide $presentation)
     {
         $presentation->delete();
         return response()->json(null,204);
